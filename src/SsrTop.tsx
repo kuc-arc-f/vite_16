@@ -21,5 +21,6 @@ export default function Page() {
 `;
 }
 /*
+"/public/assets/entry-client.js"
 <script type="module" src="/assets/entry-client.tsx"></script>
 */

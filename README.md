@@ -1,6 +1,6 @@
 ﻿# vite_16
 
- Version: 0.9.1 : first
+ Version: 0.9.2 :
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
@@ -17,25 +17,25 @@ React + vite, sample
 * vercel.json
 ```
 {
-    "version": 2,
-    "public": true,
-    "builds": [
-      {
-        "src": "public/**/*",
-        "use": "@vercel/static"
-      },        
-      {
-        "src": "server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      { "handle": "filesystem" },
-      {
-        "src": "/.*",
-        "dest": "/server.js"
-      }
-    ]
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },        
+    {
+      "src": "dist/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/.*",
+      "dest": "/dist/server.js"
+    }
+  ]
 }
 ```
 

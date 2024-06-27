@@ -2,7 +2,7 @@ import fs from 'node:fs/promises'
 import express from 'express'
 import { renderToString } from 'react-dom/server';
 //
-import SsrTop from './src/SsrTop';
+import SsrTop from '../src/SsrTop';
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 5173
@@ -15,7 +15,7 @@ const templateHtml = isProduction
   ? ssrHtml
   : '';
 //
-import testRouter from './server/api/test';
+import testRouter from './api/test';
 
 console.log(".NODE_ENV =", process.env.NODE_ENV);
 // Create http server
@@ -53,7 +53,7 @@ app.use('*', async (req, res) => {
       render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render
     } else {
       template = templateHtml
-      render = (await import('./dist/server/entry-server.js')).render
+      render = (await import('./server/entry-server.js')).render
     }
     const rendered = await render();
     const html = template

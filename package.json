@@ -12,7 +12,7 @@
     "clean": "rimraf dist && rimraf server.js && rimraf public/assets",
     "dev": "nodemon",
     "dev:test": "node server.js",
-    "preview": "NODE_ENV=production node server.js"
+    "preview": "NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
